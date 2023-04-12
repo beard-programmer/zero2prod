@@ -91,8 +91,8 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
         .add_source(
             config::Environment::with_prefix("APP")
                 .try_parsing(true)
-                .separator("__")
-                .list_separator(" "),
+                .prefix_separator("_")
+                .separator("__"),
         )
         .build()?
         .try_deserialize()
